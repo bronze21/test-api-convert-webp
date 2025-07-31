@@ -64,6 +64,7 @@ app.post('/convert', async ({body, headers, set}) => {
 		const quality = Number(compress_ratio) || 60;
 		/* Cek Body data */
 		/* Proses image */
+			console.info("Process Image", {fileName: file.name, quality})
 			const newFileName = `${crypto.randomUUID()}.webp`;
 			const bufferImage = Buffer.from(await file.arrayBuffer());
 			
